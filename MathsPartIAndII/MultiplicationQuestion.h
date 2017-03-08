@@ -1,5 +1,5 @@
 //
-//  AdditionQuestion.h
+//  MultiplicationQuestion.h
 //  MathsPartIAndII
 //
 //  Created by Pierre Binon on 2017-03-08.
@@ -10,7 +10,7 @@
 
 
 
-@interface AdditionQuestion : Question
+@interface MultiplicationQuestion : Question
 
 - (void) generateQuestion;
 

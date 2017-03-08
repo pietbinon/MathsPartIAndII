@@ -1,5 +1,5 @@
 //
-//  QuestionManager.h
+//  QuestionFactory.h
 //  MathsPartIAndII
 //
 //  Created by Pierre Binon on 2017-03-08.
@@ -11,11 +11,10 @@
 
 
 
-@interface QuestionManager : NSObject
+@interface QuestionFactory : NSObject
 
-@property (nonatomic) NSMutableArray *questionsArray;
-@property (nonatomic) NSInteger totalTime;
+@property (nonatomic) NSArray <NSString *>*typeOfQuestionsArray;
 
-- (NSString *) timeOutput;
+- (Question *) generateRandomQuestion;
 
 @end

@@ -26,12 +26,12 @@
 
 //Using class method
 + (NSString *) inputHandling {
-    
     char inputChars[255];
     fgets(inputChars, 255, stdin);
     NSString *inputString = [NSString stringWithCString: inputChars encoding: NSUTF8StringEncoding];
     NSString *inputedText = [inputString stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     return inputedText;
+    
     
 }
 

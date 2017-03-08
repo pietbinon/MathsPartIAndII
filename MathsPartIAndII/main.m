@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AdditionQuestion.h"
+#import "Question.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 
 
@@ -21,17 +22,25 @@ int main(int argc, const char * argv[]) {
         
         ScoreKeeper *score = [ScoreKeeper new];
         QuestionManager *questionManager = [[QuestionManager alloc] init];
+        QuestionFactory *factory = [[QuestionFactory alloc] init];
         
         
         while (YES) {
             
-            AdditionQuestion *addition = [[AdditionQuestion alloc] init];
-            [questionManager.questionsArray addObject: addition];
+//            AdditionQuestion *addition = [[AdditionQuestion alloc] init];
+            
+            //!!!!!!!THIS LINE VERY IMPORTANT!!!!!!!
+            //DO NOT Question *question = [[Question alloc] init];
+            Question *question = [factory generateRandomQuestion];
+            
+            
+            NSLog (@"%@", question.question);
+            [questionManager.questionsArray addObject: question];
             
             //            //Cannot be instantiated within the loop because it's being reset everytime the loop runs...
             //            ScoreKeeper *score = [ScoreKeeper new];
             
-            NSLog (@"%@", addition.question);
+//            NSLog (@"%@", question.question);
             
             //            char inputChars[255];
             //            fgets(inputChars, 255, stdin);
@@ -59,7 +68,7 @@ int main(int argc, const char * argv[]) {
                 
                 //            //WON'T WORK THAT WAY BECAUSE SELF REFERS TO THE ADDITIONQUESTION CLASS AND CAN ONLY BE USED IN IT
                 //            if (inputedInteger == self.answer)
-                if (inputedInteger == addition.answer) {
+                if (inputedInteger == question.answer) {
                     NSLog (@"RIGHT!");
                     score.correctAnswer++;
                 }
