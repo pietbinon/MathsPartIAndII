@@ -30,6 +30,8 @@ int main(int argc, const char * argv[]) {
 //            AdditionQuestion *addition = [[AdditionQuestion alloc] init];
             
             //!!!!!!!THIS LINE VERY IMPORTANT!!!!!!!
+            //It returns from QuestionFacrory class one of the four math classes chosen randomly in QuestionFactory class and because the return type of
+            //the method - (Question *) generateRandomQuestion returns a Question type
             //DO NOT Question *question = [[Question alloc] init];
             Question *question = [factory generateRandomQuestion];
             

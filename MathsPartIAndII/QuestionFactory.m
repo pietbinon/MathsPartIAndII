@@ -35,7 +35,7 @@
     
     
     
-    
+    //Makes a class from a string
     return [[NSClassFromString(newString) alloc] init];
 }
 
